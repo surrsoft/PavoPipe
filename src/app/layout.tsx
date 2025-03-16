@@ -21,12 +21,24 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-    <body className={`${geistSans.variable} ${geistMono.variable}`}>
-    <ChakraProviderIn>
-      {children}
-    </ChakraProviderIn>
-    </body>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.documentElement.style.colorScheme = 'dark';
+              })()
+            `,
+          }}
+        />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <ChakraProviderIn>
+          {children}
+        </ChakraProviderIn>
+      </body>
     </html>
   );
 }

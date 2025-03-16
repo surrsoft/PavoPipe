@@ -1,5 +1,6 @@
 import { ThemeProvider } from 'next-themes';
-import { ChakraProvider, defaultSystem } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { CacheProvider } from '@chakra-ui/next-js';
 import React from 'react';
 
 /**
@@ -7,8 +8,12 @@ import React from 'react';
  */
 export function ChakraProviderIn({children}: {children: React.ReactNode}) {
   return (
-    <ChakraProvider value={defaultSystem}>
-        <ThemeProvider>{children}</ThemeProvider>
-    </ChakraProvider>
+    <CacheProvider>
+      <ChakraProvider>
+          <ThemeProvider attribute="data-theme" enableSystem={false} defaultTheme="dark">
+              {children}
+          </ThemeProvider>
+      </ChakraProvider>
+    </CacheProvider>
   )
 }
