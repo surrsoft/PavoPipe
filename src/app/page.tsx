@@ -1,5 +1,8 @@
+'use client';
+
 import Image from "next/image";
 import styles from "./page.module.css";
+import { Button } from "@chakra-ui/react";
 
 export default function Home() {
   return (
@@ -19,6 +22,10 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
+
+        <Button colorScheme="blue" size="lg" mt={4}>
+          Кнопка Chakra UI
+        </Button>
 
         <div className={styles.ctas}>
           <a
