@@ -8,8 +8,13 @@
 
 - в package.json в команде `dev` прописан порт 22149: `"dev": "next dev --turbopack -p 22149",`
 
-- ChakraUI
-  - [x] `npm i @chakra-ui/react @chakra-ui/next-js @emotion/react @emotion/styled framer-motion`
+- ChakraUI (https://chakra-ui.com/docs/get-started/frameworks/next-app)
+  - [x] `npm i @chakra-ui/react`
+  - [x] `npm i @emotion/react`
+  - [x] `npx @chakra-ui/cli snippet add` (это добавит @chakra-ui/cli)
+  - `npm i @chakra-ui/next-js`
+  - `npm i @emotion/styled`
+  - `npm i framer-motion`
   - [x] `npm i @chakra-ui/icons`
   - [x] `npm i react-icons --save`
   - `npm i chakra-react-select`
