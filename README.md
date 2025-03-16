@@ -6,7 +6,25 @@
 
 - установленное помечено галочкой
 
+## Настройки
+
 - в package.json в команде `dev` прописан порт 22149: `"dev": "next dev --turbopack -p 22149",`
+
+### Оптимизация [[250317002609]]
+
+Проект использует функцию `optimizePackageImports` из Next.js для оптимизации размера бандла Chakra UI. Это позволяет загружать только те компоненты Chakra UI, которые фактически используются в проекте.
+
+Настройка находится в `next.config.ts`:
+
+```typescript
+const config: NextConfig = {
+  experimental: {
+    optimizePackageImports: ["@chakra-ui/react"],
+  },
+};
+```
+
+## Установка пакетов
 
 - ChakraUI (https://chakra-ui.com/docs/get-started/frameworks/next-app)
   - [x] `npm i @chakra-ui/react`
@@ -37,3 +55,5 @@
   - `npm i next-international`
   - `npm i path-to-regexp`
   - [x] `npm i -D eslint-plugin-import` (для автоматической сортировки импортов, см. !asau177!)
+
+

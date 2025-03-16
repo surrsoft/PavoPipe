@@ -1,7 +1,11 @@
-import type { NextConfig } from "next";
+import { NextConfig } from 'next';
 
-const nextConfig: NextConfig = {
+const config: NextConfig = {
   /* config options here */
+  experimental: {
+    // см. [250317002609]
+    optimizePackageImports: ["@chakra-ui/react"],
+  },
 };
 
-export default nextConfig;
+export default config;
